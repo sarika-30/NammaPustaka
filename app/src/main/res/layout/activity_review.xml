@@ -1,10 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ReviewActivity">
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/etBookTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Book Title"
+        android:inputType="textCapWords"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etReview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="top"
+        android:hint="Write your review here..."
+        android:inputType="textMultiLine"
+        android:minHeight="150dp"
+        app:layout_constraintBottom_toTopOf="@id/btnSaveReview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etBookTitle"
+        android:layout_marginTop="16dp" />
+
+    <Button
+        android:id="@+id/btnSaveReview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Save Review"
+        app:layout_constraintBottom_toTopOf="@id/scrollReviews"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="16dp" />
+
+    <ScrollView
+        android:id="@+id/scrollReviews"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnSaveReview">
+
+        <TextView
+            android:id="@+id/tvSavedReviews"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:lineSpacingExtra="4dp" />
+
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
